@@ -93,9 +93,10 @@ contract MuliSigWallet {
      */
     
     /* Contract constructor sets the intial owners and required number of confirmations
-       _owners List of inital owners 
+       _owners List of initial owners 
        _numConfirmationsRequired Number of required confirmations
     */
+    
     constructor(address[] memory _owners, uint _numConfirmationsRequired) 
         validRequirment(_owners.length, _numConfirmationsRequired)
     {
@@ -110,17 +111,20 @@ contract MuliSigWallet {
     }
     
     // Fallback function allows to deposit ether
+    
     receive() payable external {
         emit Deposit(msg.sender, msg.value, address(this).balance);
     }
     
     // Helper function to deposit into Remix
+    
     function deposit() external payable {
         emit Deposit(msg.sender, msg.value, address(this).balance);
     }
     
     // Allows address that deployed the contract to add a new owner
     // newOwner Address of the new owner
+    
     function addOwner(address newOwner)
         public 
         onlyWallet
@@ -134,8 +138,9 @@ contract MuliSigWallet {
         emit OwnerAddition(newOwner);
     }
     
-    // Allows address that deployed the ontract to change the number of required confirmations
+    // Allows address that deployed the contract to change the number of required confirmations
     // numConfirmationsRequired Number of required confirmations
+    
     function changeConfirmationsRequired(uint _numConfirmationsRequired)
         public 
         onlyWallet
@@ -150,6 +155,7 @@ contract MuliSigWallet {
     // _to Transaction target address
     // _value Transaction ether value 
     // _data Transaction data
+    
     function submitTransaction(address _to, uint _value, bytes memory _data) 
         public 
         onlyOwner 
@@ -170,6 +176,7 @@ contract MuliSigWallet {
     
     // Allows owner to confirm a transaction 
     // _txIndex Transaction ID
+    
     function confirmTransaction(uint _txIndex) 
         public 
         onlyOwner
@@ -186,6 +193,7 @@ contract MuliSigWallet {
     
     // Allows anyone to execute a confirmed transaction
     // _txIndex Transaction ID
+    
     function exectueTransaction(uint _txIndex) 
         public
         onlyOwner
@@ -203,6 +211,7 @@ contract MuliSigWallet {
     
     // Allows owner to revoke a confirmation
     // _txIndex Transaction ID
+    
     function revokeConfirmation(uint _txIndex)
         public
         onlyOwner
@@ -219,11 +228,13 @@ contract MuliSigWallet {
     }
     
     // Returns list of owners
+    
     function getOwners() public view returns (address[] memory) {
         return owners;
     } 
     
     // Returns array with owner addresses, which confirmed transaction
+    
     function getConfirmations(uint transactionId)
         public
         view
@@ -243,6 +254,7 @@ contract MuliSigWallet {
     }
     
     // Returns list of transaction IDs in defined range
+    
     function getTransaction(uint _txIndex)
         public
         view
