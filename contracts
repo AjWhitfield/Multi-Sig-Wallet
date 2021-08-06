@@ -27,12 +27,12 @@ contract MuliSigWallet {
     mapping(uint => mapping(address => bool)) public isConfirmed;
     Transaction[] public transactions;   
     
-    struct Transaction {                                                                    // created after submitTransaction() is called
-        address to;                                                                         // which owner is reeieveing eth
-        uint value;                                                                         // how much eth was sent
-        bytes data;                                                                         // tranaction and another contract information
-        bool executed;                                                                      // did transactio go through
-        uint numConfirmations;                                                               // number of approvals 
+    struct Transaction {                                                                   
+        address to;                                                                         
+        uint value;                                                                         
+        bytes data;                                                                        
+        bool executed;                                                                      
+        uint numConfirmations;                                                             
     }
     
      /*
