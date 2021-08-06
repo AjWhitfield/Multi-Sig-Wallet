@@ -6,6 +6,7 @@ contract MuliSigWallet {
     /*
      *  Events
      */
+     
     event Deposit(address indexed sender, uint amount, uint balance);
     event SubmitTransaction(address indexed owner, uint indexed txIndex, address indexed to, uint value, bytes data);
     event ConfirmTransaction(address indexed owner, uint indexed txIndex);
@@ -17,6 +18,7 @@ contract MuliSigWallet {
      /*
      *  Storage
      */
+     
     address[] public owners;                                                                
     mapping(address => bool) public isOwner;  
     uint public numConfirmationsRequired;
@@ -36,6 +38,7 @@ contract MuliSigWallet {
      /*
      *  Modifiers
      */
+     
     modifier onlyOwner() {
         require(isOwner[msg.sender], "not owner");
         _;
