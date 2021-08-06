@@ -5,9 +5,9 @@ this transaction". Transactions can be executed only when confirmed by a predefi
 You can define this multisig wallet as a 1-3 wallet, 5-5 wallet, or a 25-50 wallet, it's entirely  up to you.
 
 # Features
-All the copayers can see the funds and transactions of the wallet
+All the copayers can see the funds and transactions of the wallet.
 Requires one or more copayers to sign a transaction to send funds from the wallet. This feature adds security to your funds
-Transaction data and log decoding, makes transactions more readable
+Transaction data and log decoding, makes transactions more readable.
 
 # Limitations 
-Transactions to address 0 cannot be done. Any other transaction can be done
+Transactions to address 0 cannot be done. Any other transaction can be done.
