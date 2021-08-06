@@ -134,7 +134,6 @@ contract MuliSigWallet {
         emit OwnerAddition(newOwner);
     }
     
-    
     // Allows address that deployed the ontract to change the number of required confirmations
     // numConfirmationsRequired Number of required confirmations
     function changeConfirmationsRequired(uint _numConfirmationsRequired)
@@ -146,7 +145,6 @@ contract MuliSigWallet {
         
         emit RequirementChange(_numConfirmationsRequired);
     }
-    
     
     // Allows owner to submit a transaction
     // _to Transaction target address
