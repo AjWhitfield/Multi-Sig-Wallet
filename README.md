@@ -1,5 +1,5 @@
 # Ethereum Multisignature Wallet
-The purpose of multisig wallets is to increase security by requiring multiple parties to agree on transactions before execution. Transactions can be executed only when confirmed by a predefined number of owners. By signing the transaction you are digitally saying "I am an owner of the funds, I have the key to manage the funds, and I approve this transaction". Transactions can be executed only when confirmed by a predefined number of owners. You can define this multisig wallet as a 1-3 wallet, 5-5 wallet, or a 25-50 wallet.
+The purpose of multisig wallets is to increase security by requiring multiple parties to agree on transactions before execution. Transactions can be executed only when confirmed by a predefined number of owners. By signing the transaction, you are digitally saying "I am an owner of the funds, I have the key to manage the funds, and I approve this transaction". Transactions can be executed only when confirmed by a predefined number of owners. You can define this multisig wallet as a 1-3 wallet, 5-5 wallet, or a 25-50 wallet.
 
 # Features
 - All the copayers can see the funds and transactions of the wallet
